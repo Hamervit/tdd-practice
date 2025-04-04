@@ -10,6 +10,7 @@
         {
             Health = 1_000;
             Level = 1;
+            MaxHealth = 1_500;
         }
 
         public void Attack(Character defender, int damage)
@@ -37,7 +38,7 @@
             if (IsAlive())
             {
                 Health += health;
-                if(Health > 1_000)
+                if (Health > 1_000)
                 {
                     Health = 1_000;
                 }
@@ -50,7 +51,12 @@
 
         public void LevelUp(int level = 1)
         {
-            throw new InvalidOperationException("No puedes subir de nivel si estás muerto.");
+            if (!IsAlive())
+            {
+                throw new InvalidOperationException("No puedes subir de nivel si estás muerto.");
+            }
+
+            Level = level;
         }
     }
 }

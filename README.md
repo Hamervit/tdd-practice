@@ -30,7 +30,7 @@ https://sammancoaching.org/kata_descriptions/rpg_combat.html
 - [X] Debe arrojar una excepción si un personaje muerto intenta subir de nivel.
 - [X] Debe evitar que un personaje se cure más de lo que su nivel actual le permite.
 - [X] Debe la vida actual del personaje ser 500 cuando su vida maxima es 1000 recibe un ataque de 800 y se cura 300.
-- [ ] Debe un personaje poder subir de nivel y al alcanzar el nivel 6, su vida máxima debe aumentar a 1500.
+- [X] Debe un personaje poder subir de nivel y al alcanzar el nivel 6, su vida máxima debe aumentar a 1500.
 - [ ] Debe un personaje tener 1200 de vida cuando recibe un ataque de 700 y se cura 400
 - [ ] Debe disminuir el daño de ataque de un personaje en un 50% si el personaje al que ataca lo supera por 5 niveles o más.
 - [ ] Debe aumentar el daño de ataque de un personaje en un 50% si el personaje al que ataca es inferior por 5 niveles o más.

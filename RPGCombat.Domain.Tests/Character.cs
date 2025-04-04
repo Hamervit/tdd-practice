@@ -45,7 +45,7 @@
 
         public void LevelUp()
         {
-            
+            throw new InvalidOperationException("No puedes subir de nivel si estás muerto.");
         }
     }
 }

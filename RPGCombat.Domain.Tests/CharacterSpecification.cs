@@ -143,10 +143,12 @@ namespace RPGCombat.Domain.Tests
 
 
             // Act
-            character.LevelUp();
+            var levelUp = () => character.LevelUp();
 
             // Assert
             character.Level.Should().Be(1);
+            levelUp.Should().Throw<InvalidOperationException>()
+                .WithMessage("No puedes subir de nivel si estás muerto.");
         }
     }
 }

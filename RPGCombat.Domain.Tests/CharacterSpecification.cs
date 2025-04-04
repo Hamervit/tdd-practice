@@ -89,7 +89,7 @@ namespace RPGCombat.Domain.Tests
 
             // Assert
             character.IsAlive().Should().BeTrue();
-            character.Health.Should().Be(1100);
+            character.Health.Should().Be(1000);
         }
 
         [Fact]
@@ -108,8 +108,8 @@ namespace RPGCombat.Domain.Tests
         }
 
         [Theory]
-        [InlineData(100, 1_100), InlineData(200, 1_200), InlineData(300, 1_300)]
-        public void Debe_aumentar_su_vida_en_la_cantidad_curada_al_curarse_a_si_mismo(int curedHealth, int finalHealth)
+        [InlineData(100, 1_000), InlineData(200, 1_000), InlineData(300, 1_000)]
+        public void Debe_aumentar_su_vida_en_la_cantidad_curada_al_curarse_a_si_mismo_teniendo_en_cuenta_el_limite_de_vida_por_nivel(int curedHealth, int finalHealth)
         {
             // Arrange
             var character = new Character();
@@ -163,7 +163,6 @@ namespace RPGCombat.Domain.Tests
             // Assert
             character.Level.Should().BeLessThan(6);
             character.Health.Should().Be(1_000);
-
         }
     }
 }

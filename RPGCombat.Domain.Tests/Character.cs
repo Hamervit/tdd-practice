@@ -36,6 +36,10 @@
             if (IsAlive())
             {
                 Health += health;
+                if(Health > 1_000)
+                {
+                    Health = 1_000;
+                }
             }
             else
             {

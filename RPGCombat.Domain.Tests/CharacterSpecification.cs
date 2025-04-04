@@ -150,5 +150,20 @@ namespace RPGCombat.Domain.Tests
             levelUp.Should().Throw<InvalidOperationException>()
                 .WithMessage("No puedes subir de nivel si estás muerto.");
         }
+
+        [Fact]
+        public void Debe_evitar_que_un_personaje_se_cure_mas_de_lo_que_su_nivel_actual_le_permite()
+        {
+            // Arrange
+            var character = new Character();
+
+            // Act
+            character.Cure(1_000);
+
+            // Assert
+            character.Level.Should().BeLessThan(6);
+            character.Health.Should().Be(1_000);
+
+        }
     }
 }

@@ -26,4 +26,9 @@ https://sammancoaching.org/kata_descriptions/rpg_combat.html
 - [X] Debe arrojar una excepcion si un personaje muerto intenta curarse.
 - [X] Debe aumentar su vida en la cantidad curada al curarse a sí mismo.
 ---------------------------------------------
-
+- [X] Debe permitir crear un personaje y su nivel inicial debe ser 1.
+- [ ] Debe arrojar una excepción si un personaje muerto intenta subir de nivel.
+- [ ] Debe evitar que un personaje se cure más de lo que su nivel actual le permite.
+- [ ] Debe un personaje poder subir de nivel y al alcanzar el nivel 6, su vida máxima debe aumentar a 1500.
+- [ ] Debe disminuir el daño de ataque de un personaje en un 50% si el personaje al que ataca lo supera por 5 niveles o más.
+- [ ] Debe aumentar el daño de ataque de un personaje en un 50% si el personaje al que ataca es inferior por 5 niveles o más.

@@ -120,47 +120,33 @@ namespace RPGCombat.Domain.Tests
             // Assert
             character.Health.Should().Be(finalHealth);
         }
-    }
 
-    public class Character
-    {
-        public int Health { get; private set; }
-
-        public Character()
+        [Fact]
+        public void Debe_permitir_crear_un_personaje_y_su_nivel_inicial_debe_ser_1()
         {
-            Health = 1_000;
+            // Arrange
+            var character = new Character();
+
+            // Act
+            var level = character.Level;
+
+            // Assert
+            level.Should().Be(1);
         }
 
-        public void Attack(Character defender, int damage)
+        [Fact]
+        public void Debe_arrojar_una_excepcion_si_un_personaje_muerto_intenta_subir_de_nivel()
         {
-            if (this == defender)
-            {
-                throw new InvalidOperationException("No puedes hacerte daño a ti mismo.");
-            }
+            // Arrange
+            var character  = new Character();
+            character.TakeDamage(1000);
 
-            defender.TakeDamage(damage);
-        }
 
-        public void TakeDamage(int damage)
-        {
-            Health -= damage;
-        }
+            // Act
+            character.LevelUp();
 
-        public bool IsAlive()
-        {
-            return Health > 0;
-        }
-
-        public void Cure(int health)
-        {
-            if (IsAlive())
-            {
-                Health += health;
-            }
-            else
-            {
-                throw new InvalidOperationException("No puedes curarte si estás muerto.");
-            }
+            // Assert
+            character.Level.Should().Be(1);
         }
     }
 }

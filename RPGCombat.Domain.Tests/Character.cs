@@ -4,6 +4,7 @@
     {
         public int Health { get; private set; }
         public int Level { get; private set; }
+        public int MaxHealth { get; internal set; }
 
         public Character()
         {
@@ -47,7 +48,7 @@
             }
         }
 
-        public void LevelUp()
+        public void LevelUp(int level = 1)
         {
             throw new InvalidOperationException("No puedes subir de nivel si estás muerto.");
         }

@@ -194,5 +194,34 @@ namespace RPGCombat.Domain.Tests
             character.Level.Should().Be(6);
             character.MaxHealth.Should().Be(1_500);
         }
+
+        [Fact]
+        public void Debe_un_personaje_tener_1200_de_vida_cuando_recibe_un_ataque_de_700_y_se_cura_400_y_es_nivel_6()
+        {
+            // Arrange
+            var character = new Character();
+            character.LevelUp(6);
+            character.TakeDamage(700);
+            character.Cure(400);
+
+            // Assert
+            character.Health.Should().Be(1_200);
+        }
+
+        [Fact]
+        public void Debe_disminuir_el_daño_de_ataque_de_un_personaje_en_un_50_porciento_si_el_personaje_al_que_ataca_lo_supera_por_5_niveles_o_más() 
+        {
+            // Arrange
+            var attacker = new Character();
+            var defender = new Character();
+
+            defender.LevelUp(6);
+
+            // Act
+            attacker.Attack(defender, 700);
+
+            // Assert
+            defender.Health.Should().Be(1_500 - (700 / 2));
+        }
     }
 }

@@ -10,7 +10,7 @@
         {
             Health = 1_000;
             Level = 1;
-            MaxHealth = 1_500;
+            MaxHealth = 1_000;
         }
 
         public void Attack(Character defender, int damage)
@@ -38,9 +38,9 @@
             if (IsAlive())
             {
                 Health += health;
-                if (Health > 1_000)
+                if (Health > MaxHealth)
                 {
-                    Health = 1_000;
+                    Health = MaxHealth;
                 }
             }
             else
@@ -57,6 +57,8 @@
             }
 
             Level = level;
+            MaxHealth = 1_500;
+            Health = MaxHealth;
         }
     }
 }

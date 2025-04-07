@@ -13,7 +13,7 @@
             MaxHealth = 1_000;
         }
 
-        public void Attack(Character defender, int damage)
+        public void Attack(Character defender, double damage)
         {
             if (this == defender)
             {
@@ -25,7 +25,7 @@
             defender.TakeDamage(finalDamage);
         }
 
-        private double CalculateDamagePerLevels(Character defender, int damage)
+        private double CalculateDamagePerLevels(Character defender, double damage)
         {
             int levelDifference = defender.Level - Level;
             double finalDamage = 0;

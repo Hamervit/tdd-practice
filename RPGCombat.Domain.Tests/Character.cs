@@ -20,7 +20,8 @@
                 throw new InvalidOperationException("No puedes hacerte daño a ti mismo.");
             }
 
-            defender.TakeDamage(damage);
+
+            defender.TakeDamage(defender.Level > Level ? 350 : damage);
         }
 
         public void TakeDamage(int damage)

@@ -2,7 +2,7 @@
 {
     public class Character
     {
-        public int Health { get; private set; }
+        public double Health { get; private set; }
         public int Level { get; private set; }
         public int MaxHealth { get; internal set; }
 
@@ -20,12 +20,29 @@
                 throw new InvalidOperationException("No puedes hacerte daño a ti mismo.");
             }
 
-            bool isMajorPer5Lvls = defender.Level - Level >= 5;
+            var finalDamage = CalculateDamagePerLevels(defender, damage);
 
-            defender.TakeDamage(isMajorPer5Lvls ? damage / 2 : damage);
+            defender.TakeDamage(finalDamage);
         }
 
-        public void TakeDamage(int damage)
+        private double CalculateDamagePerLevels(Character defender, int damage)
+        {
+            int levelDifference = defender.Level - Level;
+            double finalDamage = 0;
+
+            if (levelDifference >= 5)
+            {
+                finalDamage = damage * 0.5;
+            }
+            else
+            {
+                finalDamage = damage;
+            }
+
+            return finalDamage;
+        }
+
+        public void TakeDamage(double damage)
         {
             Health -= damage;
         }

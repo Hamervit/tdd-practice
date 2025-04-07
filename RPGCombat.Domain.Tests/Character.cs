@@ -34,6 +34,10 @@
             {
                 finalDamage = damage * 0.5;
             }
+            else if (levelDifference <= -5)
+            {
+                finalDamage = 750;
+            }
             else
             {
                 finalDamage = damage;

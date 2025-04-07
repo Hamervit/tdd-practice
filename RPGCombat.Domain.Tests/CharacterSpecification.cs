@@ -208,20 +208,21 @@ namespace RPGCombat.Domain.Tests
             character.Health.Should().Be(1_200);
         }
 
-        [Fact]
-        public void Debe_disminuir_el_daño_de_ataque_de_un_personaje_en_un_50_porciento_si_el_personaje_al_que_ataca_lo_supera_por_5_niveles_o_más() 
+        [Theory]
+        [InlineData(6, 700, 1150)]
+        public void Debe_disminuir_el_daño_de_ataque_de_un_personaje_en_un_50_porciento_si_el_personaje_al_que_ataca_lo_supera_por_5_niveles_o_más(int defenderLevel, int attackerDamage, int defenderHealth ) 
         {
             // Arrange
             var attacker = new Character();
             var defender = new Character();
 
-            defender.LevelUp(6);
+            defender.LevelUp(defenderLevel);
 
             // Act
-            attacker.Attack(defender, 700);
+            attacker.Attack(defender, attackerDamage);
 
             // Assert
-            defender.Health.Should().Be(1_500 - (700 / 2));
-        }
+            defender.Health.Should().Be(defenderHealth);
+        } 
     }
 }

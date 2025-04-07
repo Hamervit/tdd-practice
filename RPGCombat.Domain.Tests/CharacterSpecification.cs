@@ -209,7 +209,7 @@ namespace RPGCombat.Domain.Tests
         }
 
         [Theory]
-        [InlineData(6, 700, 1150)]
+        [InlineData(6, 700, 1150), InlineData(6, 800, 1100)]
         public void Debe_disminuir_el_daño_de_ataque_de_un_personaje_en_un_50_porciento_si_el_personaje_al_que_ataca_lo_supera_por_5_niveles_o_más(int defenderLevel, int attackerDamage, int defenderHealth ) 
         {
             // Arrange

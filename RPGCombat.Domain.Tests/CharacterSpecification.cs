@@ -138,7 +138,7 @@ namespace RPGCombat.Domain.Tests
         public void Debe_arrojar_una_excepcion_si_un_personaje_muerto_intenta_subir_de_nivel()
         {
             // Arrange
-            var character  = new Character();
+            var character = new Character();
             character.TakeDamage(1000);
 
 
@@ -209,8 +209,8 @@ namespace RPGCombat.Domain.Tests
         }
 
         [Theory]
-        [InlineData(6, 700, 1150), InlineData(6, 800, 1100)]
-        public void Debe_disminuir_el_daño_de_ataque_de_un_personaje_en_un_50_porciento_si_el_personaje_al_que_ataca_lo_supera_por_5_niveles_o_más(int defenderLevel, int attackerDamage, int defenderHealth ) 
+        [InlineData(6, 700, 1150), InlineData(6, 800, 1100), InlineData(6, 1000, 1000)]
+        public void Debe_disminuir_el_daño_de_ataque_de_un_personaje_en_un_50_porciento_si_el_personaje_al_que_ataca_lo_supera_por_5_niveles_o_más(int defenderLevel, int attackerDamage, int defenderHealth)
         {
             // Arrange
             var attacker = new Character();
@@ -223,6 +223,6 @@ namespace RPGCombat.Domain.Tests
 
             // Assert
             defender.Health.Should().Be(defenderHealth);
-        } 
+        }
     }
 }

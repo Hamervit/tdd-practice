@@ -85,7 +85,7 @@
             Health = MaxHealth;
         }
 
-        public void JoinFaction()
+        public void JoinFaction(string faction)
         {
             throw new NotImplementedException();
         }

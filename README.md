@@ -43,7 +43,7 @@ https://sammancoaching.org/kata_descriptions/rpg_combat.html
 - [X] Debe disminuir el daño de ataque de un personaje en un 50% si el personaje al que ataca lo supera por 5 niveles o más.
 - [X] Debe aumentar el daño de ataque de un personaje en un 50% si el personaje al que ataca es inferior por 5 niveles o más.
 --------------------------------------------
-- [ ] Debe permitir crear un personaje sin facción.
+- [X] Debe permitir crear un personaje sin facción.
 - [ ] Debe permitir que un personaje pertenezca a una facción.
 - [ ] Debe permitir que un personaje pertenezca a más de una facción.
 - [ ] Debe permitir que un personaje abandone una facción.

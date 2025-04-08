@@ -255,5 +255,18 @@ namespace RPGCombat.Domain.Tests
             // Assert
             factions.Should().BeEmpty();
         }
+
+        [Fact]
+        public void Debe_permitir_que_un_personaje_pertenezca_a_una_faccion()
+        {
+            // Arrange
+            var character = new Character();
+
+            // Act
+            character.JoinFaction("The Children of the Eclipse​");
+
+            // Assert
+            character.GetCharacterFactions().Should().Contain("The Children of the Eclipse​");
+        }
     }
 }

@@ -87,12 +87,12 @@
 
         public void JoinFaction(string faction)
         {
-            throw new NotImplementedException();
+            Factions.Add(faction);
         }
 
-        public List<string> GetCharacterFactions()
+        public IReadOnlyList<string> GetCharacterFactions()
         {
-            return [];
+            return Factions.AsReadOnly();
         }
     }
 }

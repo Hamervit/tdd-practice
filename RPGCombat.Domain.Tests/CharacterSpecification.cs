@@ -261,12 +261,13 @@ namespace RPGCombat.Domain.Tests
         {
             // Arrange
             var character = new Character();
-
-            // Act
             character.JoinFaction("The Children of the Eclipse​");
 
+            // Act
+            var factions = character.GetCharacterFactions();
+
             // Assert
-            character.GetCharacterFactions().Should().Contain("The Children of the Eclipse​");
+            factions.Should().Contain("The Children of the Eclipse​");
         }
     }
 }

@@ -95,9 +95,9 @@
             return Factions.AsReadOnly();
         }
 
-        public void LeaveFaction(string v)
+        public void LeaveFaction(string faction)
         {
-            throw new NotImplementedException();
+            Factions.Remove(faction);
         }
     }
 }

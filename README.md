@@ -46,7 +46,7 @@ https://sammancoaching.org/kata_descriptions/rpg_combat.html
 - [X] Debe permitir crear un personaje sin facción.
 - [X] Debe permitir que un personaje pertenezca a una facción.
 - [X] Debe permitir que un personaje pertenezca a más de una facción.
-- [ ] Debe permitir que un personaje abandone una facción.
+- [X] Debe permitir que un personaje abandone una facción.
 - [ ] Debe arrojar una excepción cuando un personaje intente abandonar una facción a la que no pertenece.
 - [ ] Debe permitir que un personaje abandone varias facciones.
 - [ ] Debe arrojar una excepcion cuando personajes pertenecientes a una misma facción intenten atacarse.

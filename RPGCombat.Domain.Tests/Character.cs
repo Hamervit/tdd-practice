@@ -92,7 +92,7 @@
 
         public List<string> GetCharacterFactions()
         {
-            throw new NotImplementedException();
+            return [];
         }
     }
 }

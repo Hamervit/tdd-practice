@@ -5,6 +5,7 @@
         public double Health { get; private set; }
         public int Level { get; private set; }
         public int MaxHealth { get; internal set; }
+        public List<string> Factions { get; private set; } = new List<string>();
 
         public Character()
         {
@@ -82,6 +83,16 @@
             Level = level;
             MaxHealth = 1_500;
             Health = MaxHealth;
+        }
+
+        public void JoinFaction()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetCharacterFactions()
+        {
+            throw new NotImplementedException();
         }
     }
 }

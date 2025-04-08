@@ -246,10 +246,14 @@ namespace RPGCombat.Domain.Tests
         public void Debe_permitir_crear_un_personaje_sin_faccion()
         {
             // Arrange
+            var character = new Character();
 
             // Act
+            var factions = character.GetCharacterFactions();
+
 
             // Assert
+            factions.Should().BeEmpty();
         }
     }
 }

@@ -94,5 +94,10 @@
         {
             return Factions.AsReadOnly();
         }
+
+        public void LeaveFaction(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -269,5 +269,38 @@ namespace RPGCombat.Domain.Tests
             // Assert
             factions.Should().Contain("The Children of the Eclipse​");
         }
+
+        [Fact]
+        public void Debe_permitir_que_un_personaje_pertenezca_a_mas_de_una_faccion()
+        {
+            // Arrange
+            var character = new Character();
+            character.JoinFaction("The Children of the Eclipse​");
+            character.JoinFaction("The Brotherhood of the Sun");
+
+            // Act
+            var factions = character.GetCharacterFactions();
+
+            // Assert
+            factions.Should().Contain("The Children of the Eclipse​");
+            factions.Should().Contain("The Brotherhood of the Sun");
+        }
+
+        [Fact]
+        public void Debe_permitir_que_un_personaje_abandone_una_faccion()
+        {
+            // Arrange
+            var character = new Character();
+            character.JoinFaction("The Children of the Eclipse​");
+            character.JoinFaction("The Brotherhood of the Sun");
+
+            // Act
+            character.LeaveFaction("The Children of the Eclipse​");
+
+            // Assert
+            var factions = character.GetCharacterFactions();
+            factions.Should().NotContain("The Children of the Eclipse​");
+            factions.Should().Contain("The Brotherhood of the Sun");
+        }
     }
 }

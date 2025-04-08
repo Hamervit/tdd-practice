@@ -241,5 +241,15 @@ namespace RPGCombat.Domain.Tests
             // Assert
             defender.Health.Should().Be(expectedDefenderHealth);
         }
+
+        [Fact]
+        public void Debe_permitir_crear_un_personaje_sin_faccion()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+        }
     }
 }

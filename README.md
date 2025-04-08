@@ -16,6 +16,14 @@ https://sammancoaching.org/kata_descriptions/rpg_combat.html
 * Si el objetivo del ataque de un personaje es otro 5 o más niveles por encima, el daño del ataque se reduce en un 50%.
 * Si el objetivo del ataque de un personaje es otro personaje 5 o más niveles por debajo, el daño del ataque aumenta en un 50%.
 
+## Facciones
+* Los personajes pueden pertenecer a una o más facciones
+* Los personajes nuevos no pertenecen a ninguna facción.
+* Un personaje puede unirse o abandonar una o más facciones.
+* Los jugadores que pertenezcan a la misma facción son considerados aliados.
+* Los aliados pueden curarse entre si.
+* Los aliados no pueden hacerse daño entre si.
+
 ## Test list
 - [X] Debe permitir crear un personaje con 1000 puntos de vida y en estado vivo.
 - [X] Debe un personaje infligir daño a otro personaje y reducir su vida en la cantidad del daño.
@@ -33,4 +41,14 @@ https://sammancoaching.org/kata_descriptions/rpg_combat.html
 - [X] Debe un personaje poder subir de nivel y al alcanzar el nivel 6, su vida máxima debe aumentar a 1500.
 - [X] Debe un personaje tener 1200 de vida cuando recibe un ataque de 700 y se cura 400 y es nivel 6
 - [X] Debe disminuir el daño de ataque de un personaje en un 50% si el personaje al que ataca lo supera por 5 niveles o más.
-- [ ] Debe aumentar el daño de ataque de un personaje en un 50% si el personaje al que ataca es inferior por 5 niveles o más.
+- [X] Debe aumentar el daño de ataque de un personaje en un 50% si el personaje al que ataca es inferior por 5 niveles o más.
+--------------------------------------------
+- [ ] Debe permitir crear un personaje sin facción.
+- [ ] Debe permitir que un personaje pertenezca a una facción.
+- [ ] Debe permitir que un personaje pertenezca a más de una facción.
+- [ ] Debe permitir que un personaje abandone una facción.
+- [ ] Debe arrojar una excepción cuando un personaje intente abandonar una facción a la que no pertenece.
+- [ ] Debe permitir que un personaje abandone varias facciones.
+- [ ] Debe arrojar una excepcion cuando personajes pertenecientes a una misma facción intenten atacarse.
+- [ ] Debe permitir que personajes de la misma facción se curen.
+- [ ] Debe arrojar una excepción cuando un jugador intente curar a otro personaje que no pertenece a su facción.
